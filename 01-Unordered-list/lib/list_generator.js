@@ -17,6 +17,11 @@ const unorderedList = (items) => {
   return `<ul class="list-group">${liContent}</ul>`
 };
 
+const groceries = ['milk', 'butter', 'bread'];
+
+const groceryList = document.querySelector('#list')
+
+groceryList.insertAdjacentHTML('beforeend', unorderedList(groceries))
 // Do not remove these lines:
 if (typeof window === "object") {
   document.addEventListener("DOMContentLoaded", () => {
