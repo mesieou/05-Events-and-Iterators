@@ -6,6 +6,7 @@ import runChallenges from "../spec/list_generator_examiner.js";
 
 const listItem = (content) => {
   // TODO: return the proper <li> HTML tag with its content (as a string)
+  return `<li class="list-group-item">${content}</li>`
 };
 
 const unorderedList = (items) => {
