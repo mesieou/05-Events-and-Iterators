@@ -10,7 +10,11 @@ const listItem = (content) => {
 };
 
 const unorderedList = (items) => {
-  // TODO: return the proper <ul> markup (as a string)
+  let liContent = '';
+  items.forEach(element => {
+    liContent += listItem(element)
+  });
+  return `<ul class="list-group">${liContent}</ul>`
 };
 
 // Do not remove these lines:
