@@ -1,12 +1,21 @@
 /* Your board style here */
-.racer-table td {
+/* .racer-table {
+  width: 1000px;
+} */
+
+.racer-table td, .racer-table td img {
   height: 40px;
   width: 40px;
+}
+
+.racer-table td img {
+  background-size: cover;
 }
 
 .racer-table td.active {
   background-repeat: no-repeat;
   background-size: 100%;
+  background-size: contain;
 }
 
 #player1-race td.active {
