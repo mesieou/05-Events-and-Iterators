@@ -8,14 +8,16 @@ cards.forEach((card) => {
   card.addEventListener('click', (event) => {
     let card = event.currentTarget
     let cardAmount = card.dataset.amount
+    let netSpentReceived = parseInt(cardAmount, 10) - 10;
 
     if (balance.textContent == 0) {
       alert('Game Over')
     } else {
-      card.dataset.scratched = "true";
-      balanceElement.textContent = balance + parseInt(cardAmount, 10) - 10;
       if (card.classList.contains('disabled')) {
       } else {
+        card.dataset.scratched = "true";
+        balanceElement.textContent = balance + netSpentReceived;
+        balance += netSpentReceived;
         card.insertAdjacentHTML('beforeEnd', `$${cardAmount}.00`)
       };
       card.classList.add('disabled');
