@@ -4,18 +4,20 @@ const panelsArray = Array.from(panels)
 
 panelsArray.forEach((panel) => {
   panel.addEventListener('click', (event) => {
-    let hiddenTextElements = panel.querySelectorAll('p.hidden')
 
     // Making Panels bigger by adding the toggling open/closed classes
     panelsArray.forEach((otherPanel) => {
       if (otherPanel !== event.currentTarget) {
+        let hiddenTextElements = otherPanel.querySelectorAll('p.top')
+
         otherPanel.classList.remove('open')
+        hiddenTextElements.forEach(elem => elem.classList.add('hidden'));
       } else {
+        let hiddenTextElements = panel.querySelectorAll('p.hidden')
+
         event.currentTarget.classList.toggle('open');
+        hiddenTextElements.forEach(elem => elem.classList.remove('hidden'));
       }
     });
-
-    // Turning text back on
-    hiddenTextElements.forEach(elem => elem.classList.toggle('hidden'));
   });
 });
